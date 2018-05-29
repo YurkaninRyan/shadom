@@ -1,0 +1,97 @@
+{
+  "name": "shadom",
+  "version": "0.0.1",
+  "description": "Utility that augments the document and makes it easy to work with the shadow dom.",
+  "main": "dist/shadom.browser.js",
+  "browser": "dist/shadom.browser.js",
+  "module": "dist/shadom.browser.js",
+  "scripts": {
+    "release": "generate-release",
+    "develop": "rollup -c -w",
+    "build": "NODE_ENV=production rollup -c",
+    "test": "yarn build && jest",
+    "lint": "eslint src",
+    "gh-pages": "yarn build && gh-pages --dist ./example",
+    "prepublishOnly": "yarn build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/YurkaninRyan/react-sentinel.git"
+  },
+  "keywords": [
+    "Shadom DOM"
+  ],
+  "author": "Ryan Yurkanin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/YurkaninRyan/shadom/issues"
+  },
+  "homepage": "https://ryanyurkan.in/shadom",
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-class-property": "^1.1.0",
+    "eslint-plugin-import": "^2.12.0",
+    "eslint-plugin-jest": "^21.15.2",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "generate-release": "^1.1.1",
+    "gh-pages": "^1.1.0",
+    "http-server": "^0.11.1",
+    "jest": "^23.0.0",
+    "node-sass": "^4.9.0",
+    "prop-types": "^15.6.1",
+    "re-resizable": "^4.4.8",
+    "react": "^16.4.0",
+    "react-dom": "^16.4.0",
+    "react-router-dom": "^4.2.2",
+    "rollup": "^0.59.3",
+    "rollup-plugin-babel": "^3.0.4",
+    "rollup-plugin-commonjs": "^9.1.3",
+    "rollup-plugin-includepaths": "^0.2.2",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-postcss": "^1.6.1",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-serve": "^0.4.2",
+    "rollup-plugin-uglify": "^4.0.0"
+  },
+  "dependencies": {
+    "invariant": "^2.2.4"
+  },
+  "config": {
+    "generateRelease": {
+      "no_confirm": false,
+      "skip_git_pull": false,
+      "skip_git_push": false,
+      "skip_git_flow_finish": false,
+      "release_message": true,
+      "remote": "origin",
+      "pre_commit_commands": [
+        "yarn test",
+        "yarn lint"
+      ],
+      "post_complete_commands": [
+        "yarn gh-pages"
+      ],
+      "files_to_version": [
+        "./README.md",
+        "./package.json"
+      ]
+    }
+  },
+  "peerDependencies": {
+    "prop-types": "^15.6.1",
+    "react": "^16.4.0"
+  }
+}

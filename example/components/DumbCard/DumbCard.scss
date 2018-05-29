@@ -1,0 +1,42 @@
+.DumbCard {
+  background: #fdfdfd;
+  border-radius: 2px;
+  height: 100%;
+  position: relative;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  display: flex;
+  padding: 16px 16px 16px 32px;
+  position: relative;
+
+  &.is-small {
+    font-size: 20px;
+  }
+
+  &.is-medium {
+    font-size: 28px;
+    font-weight: 500;
+  }
+
+  &.is-large {
+    font-size: 36px;
+    padding: 24px 24px 24px 48px;
+  }
+}
+
+.DumbCard__content {
+  display: flex;
+  flex: 1;
+}
+
+.DumbCard__side-banner {
+  width: 16px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: #2a9d8f;
+
+  .is-large & {
+    width: 24px;
+  }
+}
